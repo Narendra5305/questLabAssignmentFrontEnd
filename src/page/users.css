@@ -7,6 +7,7 @@
     align-items: center;
     margin-top: 50px;
     height: auto;
+    margin-top: 50px;
 }
 
 
@@ -34,10 +35,10 @@
 
 
 .card{
-    width: 350px;
-    height:350px;
+    width: 300px;
+    height:300px;
     border-radius: 10px;
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
     border: 1px solid rgb(182, 182, 182);
     position: relative;
     
@@ -61,6 +62,7 @@
     justify-content: space-evenly;
     flex-wrap: wrap;
     row-gap: 20px;
+    
 }
 
 
@@ -83,13 +85,13 @@
 .card h3 {
     position: absolute;
     left: 20px;
-    bottom: 100px;
+    bottom: 80px;
 }
 
 .card p {
     position: absolute;
     left: 20px;
-    bottom: 75px;
+    bottom: 60px;
     font-family: 'Playfair Display', serif;
 }
 
@@ -103,7 +105,9 @@
 
 
 .social-link > a img {
-    height: 35px;
+    height: 25px;
+    width: 25px;
+    margin-right: 16px;
 }
 
 
