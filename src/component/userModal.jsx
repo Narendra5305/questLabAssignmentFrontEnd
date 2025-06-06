@@ -28,6 +28,9 @@ function Reducer(state, action) {
   }
 }
 
+
+
+
 export const UserModel = () => {
     const [state, dispatch] = useReducer(Reducer, initialState);
     const [isOpen, setIsOpen] = useState(false);
@@ -76,51 +79,53 @@ export const UserModel = () => {
       </div>
 
       {isOpen && (
-        <div className="form-cont">
-          <form className="form" ref={isOpenRef} onSubmit={handleSubmit}>
-            <input
-              type="text"
-              name="first_name"
-              placeholder="First Name"
-              value={state.first_name}
-              onChange={handleChange}
-            />
-            <input
-              type="text"
-              name="last_name"
-              placeholder="Last Name"
-              value={state.last_name}
-              onChange={handleChange}
-            />
-            <input
-              type="text"
-              name="profile_url"
-              placeholder="Profile Pic Url"
-              value={state.profile_url}
-              onChange={handleChange}
-            />
-            <select name="role" value={state.role} onChange={handleChange}>
-              <option value="">Select Role</option>
-              <option value="user">User</option>
-              <option value="publisher">Publisher</option>
-              <option value="writer">Writer</option>
-            </select>
-            <input
-              type="text"
-              name="linkedin_url"
-              placeholder="LinkedIn Url"
-              value={state.linkedin_url}
-              onChange={handleChange}
-            />
-            <input
-              type="text"
-              name="twitter_url"
-              placeholder="Twitter Url"
-              value={state.twitter_url}
-              onChange={handleChange}
-            />
-            <input type="submit" className="submit-btn" value="Submit" />
-          </form>
+        <div className="form-overlay">
+          <div className="form-cont"  ref={isOpenRef}>
+            <form className="form" onSubmit={handleSubmit}>
+              <input
+                type="text"
+                name="first_name"
+                placeholder="First Name"
+                value={state.first_name}
+                onChange={handleChange}
+              />
+              <input
+                type="text"
+                name="last_name"
+                placeholder="Last Name"
+                value={state.last_name}
+                onChange={handleChange}
+              />
+              <input
+                type="text"
+                name="profile_url"
+                placeholder="Profile Pic Url"
+                value={state.profile_url}
+                onChange={handleChange}
+              />
+              <select name="role" value={state.role} onChange={handleChange}>
+                <option value="">Select Role</option>
+                <option value="user">User</option>
+                <option value="publisher">Publisher</option>
+                <option value="writer">Writer</option>
+              </select>
+              <input
+                type="text"
+                name="linkedin_url"
+                placeholder="LinkedIn Url"
+                value={state.linkedin_url}
+                onChange={handleChange}
+              />
+              <input
+                type="text"
+                name="twitter_url"
+                placeholder="Twitter Url"
+                value={state.twitter_url}
+                onChange={handleChange}
+              />
+              <input type="submit" className="submit-btn" value="Submit" />
+            </form>
+          </div>
         </div>
       )}
     </div>

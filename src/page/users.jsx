@@ -3,6 +3,8 @@ import "../page/users.css"
 import { useContext } from "react"
 import { UserContext } from "../context/userContext"
 
+import logo from "../assets/logo.png"
+
 
 export  const User =()=>{
     const { userData, addUser} = useContext(UserContext) ;
@@ -17,12 +19,15 @@ export  const User =()=>{
 
     return(
         <div className="user-main-cont">
+            <img src={logo} alt="logo" />
+
             <div className="user-cont">
+                
                 {userData.map((item)=>(
                     <div className="card" key={item._id}>
                         <img className="card-image" src={item.profile_url} alt={`image of ${item.first_name}`} />
                         <h3>{item.first_name} {item.last_name}</h3>
-                        <p>{item.role}</p>
+                        <p>Role:- {item.role}</p>
 
                         <div className="social-link">
                             <a href={item.linkedin_url} target="blank">

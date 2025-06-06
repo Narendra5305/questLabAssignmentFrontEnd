@@ -29,13 +29,15 @@ export const UserProvider = ({ children }) => {
         console.log("Sending user data:", newUser);
 
         try {
-            const response = await axios.post(baseApi, newUser, {
+            await axios.post(baseApi, newUser, {
                 headers: {
                 "Content-Type": "application/json",
                 },
             });
 
-        setUserData((prev) => [...prev, response.data]);
+            setUserData([]);
+            const response = await axios.get(baseApi);
+            setUserData(response.data.UserData);
         } catch (error) {
             console.error("Error on adding user", error);
         }
